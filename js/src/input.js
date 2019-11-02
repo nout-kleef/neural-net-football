@@ -73,6 +73,9 @@ function parseAndCreate(str) {
       $("#" + (i2 + 4).toString() + t2.toString()).val(json.away[i2][t2]);
     }
   }
+  feedforward();
+}
+function feedforward() {
   normalize();
   KPNN.reset(values);
   KPNN.run();
