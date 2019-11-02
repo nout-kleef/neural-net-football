@@ -1,4 +1,72 @@
+<!DOCTYPE html />
+<html lang="en-US">
+
+<head>
+	<meta name="author" content="Nout Kleef">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>neural-net-football - Nout Kleef</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+		integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> -->
+	<!-- <script src="http://www.w3schools.com/lib/w3data.js"></script> -->
+	<script src="https://pagecdn.io/lib/p5/0.5.16/p5.min.js"
+		integrity="sha256-bXPU+HvtR3tP1IYHZVEFHzEZ9p5zkY8GLPnOnJXW67k=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<h1>Neural Network to predict football matches</h1>
+
+	<p id="TBH">
+		<textarea id="toBeParsed" cols="24" rows="4"></textarea>
+		<table id="inputTable">
+			<tr>
+				<td colspan="4">Home team</td>
+				<td colspan="4">Away team</td>
+			</tr>
+			<tr>
+				<td>keeper</td>
+				<td>defence</td>
+				<td>midfield</td>
+				<td>forwards</td>
+				<td>keeper</td>
+				<td>defence</td>
+				<td>midfield</td>
+				<td>forwards</td>
+			</tr>
+			<table>
+				<tr>
+					<td colspan="8">Home advantage <input id="homeAdv" type="checkbox" checked="checked" /></td>
+				</tr>
+			</table>
+		</table>
+		<table style='width:186px;'>
+			<tr>
+				<th style='width:60px;'>Home</th>
+				<th style='width:60px;'>Draw</th>
+				<th style='width:60px;'>Away</th>
+			</tr>
+			<tr>
+				<td style='width:60px;'><input id="hPr" style='width:58px;' /></td>
+				<td style='width:60px;'><input id="dPr" style='width:58px;' /></td>
+				<td style='width:60px;'><input id="aPr" style='width:58px;' /></td>
+			</tr>
+		</table>
+		<button onclick="calcProbs();">
+			Calculate probabilities
+		</button>
+	</p>
+	<div id="sketch-holder">
+	</div>
 	<hr>
 	<p>
 		Acknowledgements: trained using <strong>Simbrain</strong>, visualised using <strong>p5.js</strong>
 	</p>
+	<script src="src/Weight.js"></script>
+	<script src="src/Neuron.js"></script>
+	<script src="src/Layer.js"></script>
+	<script src="src/NeuralNetwork.js"></script>
+	<script src="src/input.js"></script>
+	<script src="src/output.js"></script>
+</body>
+
+</html>
