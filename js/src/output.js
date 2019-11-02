@@ -86,7 +86,7 @@ var KPNN = new NeuralNetwork(values, weights);
 var maxW = 0;
 var maxH = 0;
 const padding = 60;
-const scl = 70;
+const scl = 50;
 function setup() {
   frameRate(10);
   cnv = createCanvas(getSize()[0], getSize()[1]);
@@ -137,7 +137,7 @@ function draw() {
       textAlign(CENTER);
       fill(0);
       noStroke();
-      textSize(14);
+      textSize(10);
       text(KPNN.layers[n].neurons[k].value.toFixed(3), x, y);
     }
   }
