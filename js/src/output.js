@@ -139,11 +139,6 @@ function draw() {
       noStroke();
       textSize(14);
       text(KPNN.layers[n].neurons[k].value.toFixed(3), x, y);
-      textSize(20);
-      textAlign(LEFT);
-      fill(255);
-      stroke(51);
-      text("Credits: Simbrain, P5.js", 20, height - 20);
     }
   }
 }
