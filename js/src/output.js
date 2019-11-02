@@ -85,15 +85,15 @@ const weights = [
 var KPNN = new NeuralNetwork(values, weights);
 var maxW = 0;
 var maxH = 0;
-const padding = 120;
-const scl = 100;
+const padding = 60;
+const scl = 70;
 function setup() {
   frameRate(10);
   cnv = createCanvas(getSize()[0], getSize()[1]);
   cnv.parent('sketch-holder');
 }
 function getSize() {
-  for(var i = 0; i < KPNN.layers.length; i++) {
+  for (var i = 0; i < KPNN.layers.length; i++) {
     maxW = KPNN.layers[i].neurons.length > maxW ? KPNN.layers[i].neurons.length : maxW;
   }
   maxH = KPNN.layers.length - 1;
@@ -105,7 +105,7 @@ function resizeAccordingly() {
 function draw() {
   background(51);
   // loop door de lagen heen
-  for(var n = 0; n < KPNN.layers.length; n++) {
+  for (var n = 0; n < KPNN.layers.length; n++) {
     var y = map(n, 0, maxH, padding, height - padding);
     // loop door de neurons heen
     for (var k = 0; k < KPNN.layers[n].neurons.length; k++) {
@@ -121,7 +121,7 @@ function draw() {
           KPNN.layers[n + 1].neurons[b].y = map(n + 1, 0, maxH, padding, height - padding);
           var x2 = KPNN.layers[n + 1].neurons[b].x;
           var y2 = KPNN.layers[n + 1].neurons[b].y;
-          if(KPNN.layers[n].neurons[k].weights[b].value > 0) {
+          if (KPNN.layers[n].neurons[k].weights[b].value > 0) {
             stroke(map(KPNN.layers[n].neurons[k].weights[b].value, 0, 10, 0, 255), 0, 0);
           } else {
             stroke(0, 0, map(KPNN.layers[n].neurons[k].weights[b].value, -10, 0, 255, 0));
